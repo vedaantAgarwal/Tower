@@ -13,11 +13,14 @@ class Slingshot {
         this.sling.bodyA = null;
     }
     display() {
-        if (this.sling.bodyA != null) {
+        if (this.sling.bodyA) {
             var point1 = this.sling.bodyA.position;
             var point2 = this.sling.pointB;
             stroke("white");
             line(point1.x, point1.y, point2.x, point2.y);
         }
+    }
+    attach(body) {
+        this.sling.bodyA = body;
     }
 }

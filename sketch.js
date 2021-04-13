@@ -65,17 +65,14 @@ function draw() {
   image(polygon_img, polygon.position.x, polygon.position.y, 40, 40);
 
   string.display();
-  textSize(20);
-  fill("lightyellow");
+  //textSize(20);
 
 
   ground.display();
   stand1.display();
   stand2.display();
 
-  strokeWeight(2);
-  stroke(15);
-  fill("skyblue");
+
   block1.display();
   block2.display();
   block3.display();
@@ -83,7 +80,7 @@ function draw() {
   block5.display();
   block6.display();
   block7.display();
-  fill("pink");
+
   block8.display();
   block9.display();
   block10.display();
@@ -94,14 +91,14 @@ function draw() {
   block19.display();
   block20.display();
   block21.display();
-  fill("turquoise");
+
   block13.display();
   block14.display();
   block15.display();
   block22.display();
   block23.display();
   block24.display();
-  fill("grey");
+
   block16.display();
   block25.display();
 
@@ -112,4 +109,11 @@ function mouseDragged() {
 
 function mouseReleased() {
   string.fly();
+}
+
+function keyPressed() {
+  if (keyCode == 32) {
+    Matter.Body.setPosition(polygon, { x: 100, y: 255 });
+    string.attach(polygon);
+  }
 }
